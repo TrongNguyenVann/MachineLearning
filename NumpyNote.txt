@@ -1,0 +1,37 @@
+import numpy as np
+
+# Use numpy.array to create matrix
+one_dimension_array = np.array([1.1, 2.2, 3.3, 4.4])
+two_dimension_array = np.array([1, 2], [3, 4], [5, 6])
+
+# We can populate a matrix with one or zero by the following syntax
+one_vector = np.ones(5);
+zero_vector = np.zero(3);
+
+# We can populate arrays with sequences of numbers by the following syntax
+sequence_of_intergers = np.arange(5, 13)
+Note that it create an array from [lower_bound, upper_bound)
+
+# Populate arrays with random numbers
+random_int_between_50_and_100 = np.random.randint(low=50, high= 101, size=(6))
+Note that it create random number in range [low, high)
+
+# To create random number between 0.0 and 1.0
+random_floats_between_0_and_1 = np.random.random([6])
+
+# Broadcasting
+Expanding the shape of an operand in a mtrix math operation to dimensions
+compatible for that operation
+
+# Task 1: Create a Linear Dataset
+feature = np.arange(6, 21)
+print(feature)
+label = feature * 3 + 4
+print (label)
+
+# Task 2: Add some noise to the Dataset
+noise = np.random.random(15) + 4
+print(noise)
+label = label + noise
+print(label)
+

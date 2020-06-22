@@ -1,0 +1,58 @@
+DataFrames are the central data structure in the pandas API. It is similar
+to an in-memory spreadsheet. Like a spreadsheet:
+  + A DataFrame stores data in cells
+  + A DataFrame has named columns (usually) and numbered rows
+
+import numpy as np
+import pandas as pd
+
+# The following code cell creates a simple DataFrame containg 10 cells:
+5 rows, 2 cols, one named temperature and the other named activity
+
+# create and populate a 5*2 Numpy array.
+my_data = np.array([[0, 3], [10, 7], [20, 9], [30, 14], [40, 15]])
+
+# create a list that holds the names of the two cols
+my_column_names = ['temperature', 'activity']
+
+# create a DataFrame
+my_dataframe = pd.DataFrame(data=my_data, columns=my_column_names)
+print(my_dataframe)
+
+# Add a new column to a DataFrame
+my_dataframe["adjusted"] = my_dataframe["activity"] + 2
+print(my_dataframe)
+
+# Pandas provide multiples way to isolate specific rows, columns, slides or
+cells in a DataFrame
+print("Row #0, #1, and #2:")
+print(my_dataframe.head(3), '\n')
+
+print("Row #2:")
+print(my_dataframe.iloc[[2]], '\n\)
+
+print("Row #1, #2 and #3:")
+print(my_dataframe[1:4], '\n')
+
+print("Column 'temperature':")
+print(my_dataframe['temperature'])
+
+# Task 1: Create a DataFrame
+randint_array = np.random.randint(0, 101, (3, 4))
+columns_data = ['Eleanor', 'Chidi', 'Tahani', 'Jason']
+desired_dataframe = pd.DataFrame(data=randint_array, columns=columns_data)
+print("Desired DataFrame:")
+print(desired_dataframe)
+
+print("The value in the cell of row #1 of the Eleanor column")
+print(desired_dataframe['Eleanor'][1])
+desired_dataframe['Janet'] = desired_dataframe['Tahani'] + desired_dataframe['Jason']
+print(desired_dataframe)
+
+# Note
+By default when assign a DataFrame to a new variable, it use reference.
+It also has a DataFrame.copy() method to copy data from one DataFrame to another
+
+
+
+
